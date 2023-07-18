@@ -1,3 +1,5 @@
+import Data.List (sortBy)
+
 main :: IO ()
 stringToInt :: String -> Int
 stringToInt = read
@@ -23,3 +25,11 @@ main = do
 
   -- Print the numbers
   print max_cal
+
+  let sorted = sortBy (flip compare) sums
+
+  let max_three_cal = take 3 sorted
+
+  let sum_cal = sum max_three_cal
+
+  print sum_cal
